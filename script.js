@@ -62,6 +62,7 @@ function pronounce(text) {
 
     const index = Math.round(Math.random() * (synth.getVoices().length));
     utterThis.voice = synth.getVoices()[index];
+    utterThis.volume = 0.5;
 
     synth.speak(utterThis);
 }
@@ -69,17 +70,18 @@ function pronounce(text) {
 
 //Substitutes the next index
 function nextIndex(shift = true){
-    if (quoteOrder.length === 0) {
+    if (quoteOrder.length === 0) { 
         quoteOrder = generateQuoteOrder();
-        if (shift && lastUsedQuoteIndex === quoteOrder[0]) {
-            quoteOrder.push(lastUsedQuoteIndex);
-            quoteOrder.shift();
-        }
     }
-    const index = quoteOrder[0];
-    lastUsedQuoteIndex = index;
-    if (shift)
+    if (shift && lastUsedQuoteIndex === quoteOrder[0]) {
+        quoteOrder.push(lastUsedQuoteIndex); 
         quoteOrder.shift();
+    }
+    const index = quoteOrder[0]; 
+    if (shift){
+        lastUsedQuoteIndex = index;
+        quoteOrder.shift();
+    }
     return index;
 }
 
