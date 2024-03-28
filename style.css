@@ -4,13 +4,16 @@ body {
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    background-size: cover;
+    background-position: center center;
 }
 * {
-    outline: 1px rgba(0, 0, 0, 0.498) solid;
+    /* outline: 1px rgba(0, 0, 0, 0.498) solid; */
 }
 .quote-container {
     width: 95%;
@@ -21,28 +24,62 @@ body {
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: end;
 
     border-radius: 10px;
+    margin-bottom: 30vh;
+
+    background-color: rgba(255, 255, 255, 0.8);
 }
 .quote-text {
     font-size: 24px;
-    padding: 1rem;
+    font-weight: 600;
+    font-style: italic;
+    padding: 3rem 1rem;
+    border-radius: 10px;
 }
 .quote-author {
     display: flex;
     justify-content: end;
     align-items: center;
+    margin-left: auto;
+
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
 }
 .author-name {
     font-size: 30px;
+    text-align: end;
+    margin-left: 1rem;
 }
 .author-photo {
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
+    margin: 1rem;
+
+    object-fit: cover;
+    border-radius: 40px;
 }
 .quote-next-button {
-    width: 100px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    border: none;
     margin: 1rem auto 0 auto;
+    background-color: rgba(255, 255, 255, 0);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+}
+.quote-next-button:hover {
+    background-color: rgba(132, 132, 132, 0.4);
+}
+.quote-next-button:active {
+    background-color: rgba(132, 132, 132, 0.8);
+}
+.quote-next-button svg {
+    width: 50%;
 }
